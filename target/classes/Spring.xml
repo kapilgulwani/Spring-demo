@@ -1,0 +1,30 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring.context.xsd">
+
+	<bean id="employee" class="com.spring.beans.Employee">
+		<constructor-arg name="eid" value="33702"></constructor-arg>
+		<constructor-arg name="ename" value="Kapil"></constructor-arg>
+		<constructor-arg name="position" value=" Software Developer"></constructor-arg>
+		<property name="addresses">
+			<list>
+				<ref bean="address1"></ref>
+				<ref bean="address2"></ref>
+			</list>
+		</property>
+
+	</bean>
+	<bean id="address1" class="com.spring.beans.Address">
+		<property name="city" value="Poona"></property>
+		<property name="pincode" value="411001"></property>
+	</bean>
+	<bean id="address2" class="com.spring.beans.Address">
+		<property name="city" value="Mumbai"></property>
+		<property name="pincode" value="400001"></property>
+	</bean>
+</beans>
